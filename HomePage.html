@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang= "en">
+     <head>
+		   <title>My Botswana</title>
+		   <link href="styles/styles.css" rel="stylesheet" type="text/css">
+		   <meta charset="UTF-8">
+           <meta name="keywords" content="HTML,CSS,JavaScript">
+           <meta name="author" content="LIS GROUP 7">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 
+	 <style>
+			header{
+				background-image:url("images/OkavangoHD_Cover.jpg");
+				background-size: 10%;
+				padding-bottom: 10%;
+				border: 2px solid #87CEEB;	
+			}
+			header p h2{
+			    color: white;
+			}
+			nav ul{
+			    background-color: #000000;
+			}
+			nav li a{
+			    color: white;
+			}
+			nav li a:hover {
+			    background-color: #87CEEB;
+			}
+			.active {
+			    background-color: #4CAF50;
+			    color: white;
+			}
+			nav li a:hover:not(.active){
+			    background-color: #87CEEB;
+			}
+
+			body #googleMap{
+				width:80%;
+				height:420px;
+				margin: 0 auto 0 auto;
+				border:solid 3px #87CEEB; 
+				position: relative;
+				z-index: 100;
+				position-top: 0;
+			}
+			body h3{
+			    color:black;
+			}
+			body hr{
+			    color:#87CEEB;
+			}
+
+			/*Formating of slide show*/	
+			* {box-sizing:border-box}
+
+			.mySlides {display:none}
+
+			/* Slideshow container */
+			.slideshow-container {
+				width: 80%;
+				position: relative;
+				margin-left: 10%;
+				margin-right: 10%
+				border: 2px solid #87CEEB;
+			}
+
+			/* Next & previous buttons */
+			.prev, .next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+				margin-top: -22px;
+				color: white;
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover, .next:hover {
+			    background-color: rgba(0,0,0,0.8);
+			}
+
+			/* Caption text */
+			.text {
+				color: white;
+				font-size: 15px;
+				padding: 8px 12px;
+				position: absolute;
+				bottom: 8px;
+				width: 100%;
+				text-align: center;
+			}
+
+			/* Number text (1/3 etc) */
+			.numbertext {
+				color: #000000;
+				font-size: 12px;
+				padding: 8px 12px;
+				position: absolute;
+				top: 0;
+			}
+
+			/* The dots/bullets/indicators */
+			.dot {
+				cursor:pointer;
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				transition: background-color 0.6s ease;
+			}
+
+			.active, .dot:hover {
+			    background-color: #717171;
+			}
+
+			/* Fading animation */
+			.fade {
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 1.5s;
+				animation-name: fade;
+				animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}
+
+			@keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}
+
+			/* On smaller screens, decrease text size */
+				@media only screen and (max-width: 300px) {
+				.prev, .next,.text {font-size: 11px}
+			} 
+			/*conclution of slide show*/
+			footer{
+				background-color: #87CEEB;
+				padding-bottom: 5%;	 
+			}
+			.bottom ul{
+			    background-color: #000000;
+			}
+			.bottom li{
+			    color: white;
+			}
+	  </style>
+	  </head>
+	  <body>
+	   <!-- Header containing nav bar -->
+	  <header>
+		   <h2>BOTSWANA</h2>
+	  </header>  
+	  
+	  <nav class = "navbar">
+		   <ul>
+				<li><a class="active" href="HomePage.html">HOME</a></li>
+				<li><a href="Baherero.html">BAHERERO</a></li>
+				<li><a href="Batswapong.html">BATSWAPONG</a></li>
+				<li><a href="basarwa.html">BASARWA</a></li>
+				<li><a href="About_Us.html">CONTACT US</a></li>
+		   </ul>
+	  </nav>
+	 
+	  <!-- Text content -->
+	  <h3>THE NATIONAL FLAG</h3>
+	  <hr/>
+	  <p>
+		 The flag is fairly simple it has blue field cut horizontality by a black strip with a white frame.
+		 Blue represents water or more specifically rain, as it is a precious resource the country relies on and sustains life.
+		 The black and white frame also had two meanings, the first being that Botswana is of diverse races
+		 that work in harmony and the second is that it represents the strips of a Zebra (the national animal).
+	  </p>
+	  
+	  <h3>POLITICAL GEOGRAPHY</h3>
+	  <hr/>
+	  <p>
+		 First of all she is located in the southern area of the African continent, about the same size as France and is bordered by 4 countries. 
+		 Looking at the map you would think Botswana is only bordered by Namibia, South Africa and Zimbabwe, but if you look very close at the northeastern
+		 tip where the Chobe River meets the Zambezi, you will see Zambezi in which all four countries meet. At this spot the border between Zambia via the
+		 world famous Zambezi River (historically used for centuries for navigating across the African Savannas) and Botswana is only a few meters wide.
+		 This area is right on the A-33 road that takes you to the <a href="#googleMap" onclick="zoomKanzung()">Kazugula ferry</a>, the only place in all Botswana that gives you direct access to Zambia
+	  </p>
+	  <p> 
+		 Botswana's capital and largest city is <a href="#googleMap" onclick="zoomGabs()">Gaborone</a>, if you speak Setswana (native language) it is pronounced "gaH-borone" located close to the border
+		 of South Africa. The country is divided into 9 districts (North-West, Central, North-East, Ghanzi, Kweneng, Kgatleng, South-East, Southern and Kgalagadi).
+		 Wit the exception of Namibia's straight and quite distinct noticeably well-marked border with Botswana (the Caprivi Strip) most borders are Rivers.
+	  </p>
+	  
+	  <div id="googleMap">
+	  </div>
+
+	  <script> 
+		
+		    var map;
+			//create map
+			function myMap() {
+				var mapProp= {
+				  center:new google.maps.LatLng(-24.653257,25.906792),
+				  zoom:5,
+				  scrollwheel: false,
+				  draggable: false,
+				  fullscreenControl: true,
+				  mapTypeId: google.maps.MapTypeId.HYBRID
+			    };
+				
+			map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			
+			google.maps.event.addListener(map, 'click', function(event){
+				this.setOptions({scrollwheel:true});
+				this.setOptions({draggable:true});
+			});
+			
+			//mouseCheck();
+			
+			//The kazungula ferry marker
+			var kazunkulaFerryMarker = new google.maps.Marker({
+				   position: new google.maps.LatLng(-17.793498, 25.262547)
+				});
+			kazunkulaFerryMarker.setMap(map);
+			google.maps.event.addListener(kazunkulaFerryMarker,'click',function() {
+				map.setZoom(15);
+				map.setCenter(kazunkulaFerryMarker.getPosition());
+				var kzinfowindow = new google.maps.InfoWindow({
+						content:"Kazugula ferry next to the boder where all four countries meet"
+				    });
+				   kzinfowindow.open(map,kazunkulaFerryMarker);
+			});
+			 
+			 //The Gaborone City Marker
+			 var gaboroneMarker = new google.maps.Marker({
+				   position: new google.maps.LatLng( -24.653257,25.906792)
+				});
+			gaboroneMarker.setMap(map);
+			google.maps.event.addListener(gaboroneMarker,'click',function() {
+				map.setZoom(13);
+				map.setCenter(gaboroneMarker.getPosition());
+				var gcinfowindow = new google.maps.InfoWindow({
+						content:"The capital of Botswnana Gaborone"
+				   });
+				gcinfowindow.open(map,gaboroneMarker);
+			});
+			 
+			 //The Okavango Delta Marker
+			var okavangoDeltaMarker = new google.maps.Marker({
+				   position: new google.maps.LatLng( -19.575098, 22.905667)
+				});
+			okavangoDeltaMarker.setMap(map);
+			google.maps.event.addListener(okavangoDeltaMarker,'click',function() {
+				map.setZoom(8);
+				map.setCenter(okavangoDeltaMarker.getPosition());
+				  var okinfowindow = new google.maps.InfoWindow({
+					   content:"The pride and joy of the nation, The Okavango Delta"
+				   });
+			    okinfowindow.open(map,okavangoDeltaMarker);
+			});
+			 
+			 //Lake Ngami marker 
+			var lakeNgamiMarker = new google.maps.Marker({
+				   position: new google.maps.LatLng( -20.451680, 22.797358)
+				});
+			lakeNgamiMarker.setMap(map);
+			google.maps.event.addListener(lakeNgamiMarker,'click',function() {
+				map.setZoom(8);
+				map.setCenter(lakeNgamiMarker.getPosition());
+				var lkinfowindow = new google.maps.InfoWindow({
+				    content:"Lake Ngami"
+				});
+				lkinfowindow.open(map,lakeNgamiMarker);
+			 });
+			 
+			 //Makgadikgadi and Sua pans Marker
+			var msPansMarker = new google.maps.Marker({
+				position: new google.maps.LatLng( -20.532141, 25.584789)
+			});
+			msPansMarker.setMap(map);
+			google.maps.event.addListener(msPansMarker,'click',function() {
+					map.setZoom(8);
+					map.setCenter(msPansMarker.getPosition());
+					var msinfowindow = new google.maps.InfoWindow({
+						content:"Makgadikgadi and Sua Pans"
+				    });
+				   msinfowindow.open(map,msPansMarker);
+			 });
+			 
+			 //Debtswana Diamond Mine Marker
+			 var dbmMarker = new google.maps.Marker({
+				   position: new google.maps.LatLng( -24.497697, 24.698555)
+				});
+			dbmMarker.setMap(map);
+			google.maps.event.addListener(dbmMarker,'click',function() {
+			map.setZoom(8);
+			map.setCenter(dbmMarker.getPosition());
+			var msinfowindow = new google.maps.InfoWindow({
+				  content:"Debtswana Diamond Mine"
+			   });
+			   msinfowindow.open(map,dbmMarker);
+			 });
+			}
+			
+			//pans out once mouse leaves map for 15 seconds
+			//function mouseCheck(){
+			//  google.maps.event.addListener(map, 'mouseover', function(event){
+			//    window.setTimeout(function(){map.setZoom(5).setCenter(new google.maps.LatLng(-24.653257,25.906792));},15000)  
+			//  });
+			//}
+			
+			//The following are the functions that zoon accodinly when hyperlinks are cliked
+			function zoomKanzung() {
+				 map.setZoom(15);
+				 map.setCenter(new google.maps.LatLng(-17.793498, 25.262547));
+			}
+			
+			//Gaborone hyperlink 
+			function zoomGabs(){
+			  map.setZoom(13);
+			  map.setCenter(new google.maps.LatLng(-24.653257,25.906792));
+			}
+			
+			//Okavango hyperlink
+			function zoomOkavango(){
+			  map.setZoom(8);
+			  map.setCenter(new google.maps.LatLng(-19.575098, 22.905667));
+			}
+			
+			//lake Ngami hyperlink
+			function zoomLakeNgami(){
+			  map.setZoom(8);
+			  map.setCenter(new google.maps.LatLng(-20.451680, 22.797358));
+			}
+			
+			//Makgadikgadi and sua pans hyperlink
+			function zoomMakgadikgadi_sua(){
+			  map.setZoom(8);
+			  map.setCenter(new google.maps.LatLng(-20.532141, 25.584789));
+			}
+			
+			//Debtswana diamond mine hyperlink
+			function zoomDebtswana(){
+			  map.setZoom(8);
+			  map.setCenter(new google.maps.LatLng(-24.497697, 24.698555));
+			}
+			
+	  </script>
+
+	  <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyAmMf4kV2q2OkYtClt6AcIt1v3r07bnk0k&callback=myMap"></script>
+
+	  
+	   <h3>PHYSICAL GEOGRAPHY</h3> 
+	   <hr/>
+	   <p>
+		 Botswana doesn't just have a bunch of open land but also a bunch of exceptionally unique land unlike anywhere else in Africa. First of all about
+		 70% of the country is dominated by the semi-arid Kalahari Desert in dry in the west part of the country whereas the east and the north parts are
+		 generally greener. In the far north and in the northwest district, you have one of the strangest natural phenomena, the <a href="#googleMap" onclick="zoomOkavango()">Okavango Delta</a>. Contrary
+		 to popular believe this is not the largest in land Delta it is surpassed by inland deltas in Mali and Sudan. However this world-renowned UNESCO
+		 Heritage Site sticks out because of the way the delta operates. Basically the Okavango meanders into geological faults, in response spread the
+		 waters out into a vast network of channels, creeks and wetlands.
+	   </p>
+	   <p>
+		 Every year rain water from the highlands of Angola come down and surge into the Okavango, causing the entire flood basin to swell up to 3 times 
+		 its permanent size between March and June. For the next few months, the entire area becomes this weird, shallow, swampy wetland with an abundance 
+		 of wildlife that flourishes in it. In fact, one of the strangest things about this area is that it is one of the few places where you will find
+		 animals that contrary to their cousins in other areas have completely adapted to the hydrated landscape. You can see swimming cheetahs, 
+		 lions and even hyenas. Finally, at the later months of the year the Okavango dries up again and about 60% of it is absorbed by plants over 
+		 30% is evaporated and the rest is either transpired into the ground aquifers of drained into <a href="#googleMap" onclick="zoomLakeNgami()">Lake Ngami</a>.
+	   </p>
+	   <p>
+		 Now, granted Botswana is dealing heavily with drought and desertification in their country and is trying to combat this though legislative action.
+		 To the east, you have the even stranger <a href="#googleMap" onclick="zoomMakgadikgadi_sua()">Makgadikgadi and Sua pans</a> which are the 2 large salt basins. This area used to be a lake that eventually 
+		 dried up and is actually the site of Botswana's largest salt and sodium carbonate mines.Speaking of mines, since 1980's Botswana has actually 
+		 been the world's largest producer of gem diamonds. Five mines have opened up since independence and the world's richest diamond mine found in 
+		 Jwaneng(<a href="#googleMap" onclick="zoomDebtswana()">Debtswana Diamond mine</a>). The diamond industry has actually played a huge role in the past as well as today in the developments of the economy and people's lives.
+	   </p>
+	   
+	   <!-- The slideshow for the pictures -->
+	   <div class="slideshow-container">
+
+		   <div class="mySlides fade">
+			 <div class="numbertext">1 / 11</div>
+			 <img src="images/botswanaFlag.png" style="width:100%" alt = "PICTURE">
+			 <div class="text">BOTSWANA FLAG</div>
+		   </div>
+
+		   <div class="mySlides fade">
+			 <div class="numbertext">2 / 11</div>
+			 <img src="images/okavango.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">TOURISTS ENJOY A MEAL IN THE OKAVANGO</div>
+		   </div>
+
+		  <div class="mySlides fade">
+			 <div class="numbertext">3 / 11</div>
+			 <img src="images/okavango2.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">MORE TOURISTS ENJOY A MEAL IN THE OKAVANGO</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">4 / 11</div>
+			 <img src="images/okavango3.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">NATURE DRIVE IN THE OKAVANGO</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">5 / 11</div>
+			 <img src="images/okavango4.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">DINING AREA OF A LOUGE IN HE OKAVANGO</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">6 / 11</div>
+			 <img src="images/sunset.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">BOTSWANA SUNSET ENJORED BY A GIRRAFE ONE OF MANY INDIDIUS ANIMALS</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">7 / 11</div>
+			 <img src="images/people1.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">SANDMAN, A FAVARIOT TOPIC OF STUDY FOR SOCIOLOGIST</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">8 / 11</div>
+			 <img src="images/people2.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">ELDERLY MOTSWANA</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">9 / 11</div>
+			 <img src="images/people3.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">DONKEY CART, A POPULAR MODE OF TRANSPORT IN RURAL AREAS</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">10 / 11</div>
+			 <img src="images/people4.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">WOMEN AT A TRADITIONAL WEEDING</div>
+		  </div>
+		  
+		  <div class="mySlides fade">
+			 <div class="numbertext">11 / 11</div>
+			 <img src="images/people5.jpg" style="width:100%" alt = "PICTURE">
+			 <div class="text">BAHERERO WOMAN IN THIER TRADITIONAL ATTIRE</div>
+		  </div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		   </div>
+		   <br>
+
+		  <div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+			<span class="dot" onclick="currentSlide(4)"></span> 
+			<span class="dot" onclick="currentSlide(5)"></span> 
+			<span class="dot" onclick="currentSlide(6)"></span> 
+			<span class="dot" onclick="currentSlide(7)"></span> 
+			<span class="dot" onclick="currentSlide(8)"></span> 
+			<span class="dot" onclick="currentSlide(9)"></span> 
+			<span class="dot" onclick="currentSlide(10)"></span>
+			<span class="dot" onclick="currentSlide(11)"></span>
+	  </div>
+	  
+	  <!-- Script for controlling slides -->
+		<script>
+		  var slideIndex = 1;
+		  showSlides(slideIndex);
+
+		  function plusSlides(n) {
+			showSlides(slideIndex += n);
+		  }
+
+		  function currentSlide(n) {
+			showSlides(slideIndex = n);
+		  }
+
+		  function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}    
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+			} 
+		   for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+			}
+		   slides[slideIndex-1].style.display = "block";  
+		   dots[slideIndex-1].className += " active";
+		   }
+		</script>
+	  
+	  <!-- Futher text content -->
+	   <h3>DEMOGRAPHICS</h3>
+	   <hr/>
+	   <p>
+		 Botswana has just a little bit over 2 million people, the majority of whom about 80% identify as ethnically Twana. Which is where Bo-"tswana" 
+		 gets its name from. Other minority groups include the Ba BaKalanga, Basarwa, Kalagari, Baherero, Batswapong and a small percentage of the
+		 population is also white. Mostly decedents from the English and European settlers during colonial days. Actually there's being a huge influx 
+		 of white people moving into Botswana from neighboring Zimbabwe, as the President Robert Mugabe has instituted laws that actively discriminate
+		 and oppress the white minority. Essentially, pretty much everybody in the country speaks English but the most dominant language being Setswana
+		 be it that some ehinic gropus may have their own language eg(BaKalaka speaking kalanga ). Many of the white people speaking Afrikaanas
+		 (which is kinda like an africanized Dutch). Long story short Botswana used to be part of the British Empire under the name of Bechuanaland.
+		 The interesting thing, though is that Botswana actually has very fascinating tribal groups found along rural areas of the country. One of
+		 them being the most sought after group for studies by sociologists the San Bushman (Basarwa). The San Bushman speak a Khoisan language which 
+		 is saturated with these unique click sounds.
+	   </p>
+	   <p>
+		 The country operates in a democratic parliamentary republic with a president as the head of state. In fact according to Transparency International
+		 Botswana is the least courrpt government in Africa on par with countries like Portugal and South Korea. Culturally, Botswana identifies closely
+		 with other countries in the South African region. About 70% of the people identify as Cristian and regular church attenadce is high. The rest
+		 are non-religious, identify with a different religion or ascribe to folk religions.
+	   </p>
+	   <p>
+		 Essentially, though Botswana used to be one of the poorest countries but today has developed a steady economy and infrastructure that has made it
+		 into the 4th largest GDP in all of Africa. On par with Mexico and Turkey. They have managed to keep both universal healthcare and education at all
+		 levels free. This is partially thanks to the mining industry, but also to the new financial sector that Botswana's heavily investing in. With strong
+		 fiscal policies and free market enterprises, Botswana was able to nab 7 billion in foreigh exchange reserves, just about 10 years ago. Today Botswanas
+		 has Africa's highest credit rating and with a well- capitalized system which allows high interst rates. Botswana seems to be doing something right.
+	   </p>
+	   <h3>BOTSWANA'S FRIENDS</h3>
+	   <hr/>
+	   <p>
+		 Now when it comes to friend Botswana kind has this like this seesaw effect in which they like groups of people that typically don't like each other.
+		 First off we have Russia and the US. The US only a huge partner with multiple embassies and consulates for each side, but so far, is also the largest 
+		 provider of aid and medical relief especially in the HIV and Aids amongst residens. Peace Corps proffessionals stop by and even help build facilities,
+		 as well as develop and train native Batswana to tackle the issue. Nonetheless, Russia is actually seen as a little bit more favorable to the Batswana. 
+		 Russia swooped in shortly after independence in 1996 as one of the first countries to acknowledge Botswana as a nation. They hit it off really well
+		 early in the game, Russia maintains numerous trade policies and educational cooperation agreements with them and even to this day each has embassies
+		 and consulates. Russians don't need a visa to visit Botswana as a testament of their relationship.
+	   </p>
+	   <p>
+		 Then you have like Israel and Pakistan. Pakistan been a favored business partner and has built ties with Botswana for years, and even has overseas
+		 embassies in Beijing and Yemen for each other. However, Israel also has cooperation agreements and invests heavily in the irrigation sector to help
+		 Botswana fight its desertification problem by suggesting models that have worked for their own country. Israel also facilitated the development of
+		 the Botswana International University of Science and Technology.
+	   </p>
+	   <p>
+		 Finally you have what Botswana would consider the best friends, Namibia and South Africa. These 3 countries go way back. First, South Africa used	 
+		 to have some drama with Botswana, but today is really close and has signed numerous agreements in tax, agriculture, health, transport and more.
+		 A huge portion of Botswana economy is dependent on South Africa and culturally they resonate pretty close as they were both parts of the British 
+		 Empire. Namibia though is  really close to Botswana too but remember Namibia kind broke away and became independent from south Africa….so here we
+		 have a country that used to be part of that country being friend with this….but relationship between South Africa and Namibia are fine. Soon after
+		 Namibia's independence, Botswana was one of the first countries to shake hand and sign treaties. The only issue is that Namibia once scared Botswana
+		 because they planned on deferring the water from the Okavango River away from the Basin to help irrigate their land which would have destroyed the
+		 whole delta. Lucky the plans were diverted.
+	   </p>
+	 
+	 <!-- Footer -->
+	 <footer>
+		  <nav class = "bottom">
+			   <ul>
+					<li class = "contact">Contact: 525 600</li>
+					<li class = "email">Email: Meme69@gmail.com</li>
+			   </ul>
+		  </nav>
+	 </footer>
+	 </body>
+</html>
